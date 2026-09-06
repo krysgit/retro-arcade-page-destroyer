@@ -25,6 +25,15 @@ This plugin is a modernized, independent fork of the classic "Asteroids Widget" 
 3. Navigate to **Appearance > Widgets** and add the **Asteroids** widget to your sidebar.
 4. (Optional) Embed the game trigger anywhere on pages or posts using the shortcode `[asteroids]`.
 
+== How to Play ==
+
+Controls:
+* **W / Up Arrow:** Thrust forward
+* **A / S / D / Left & Right Arrows:** Steer and rotate the spaceship
+* **Spacebar:** Fire bullets to destroy page elements
+* **B:** Highlight breakable targets on the screen
+* **Esc:** Quit game and exit back to standard webpage
+
 == Frequently Asked Questions ==
 
 = Does this version support PHP 8+? =
