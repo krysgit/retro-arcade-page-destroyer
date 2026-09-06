@@ -36,9 +36,32 @@ This repository contains a modernized, secure fork of the classic "Asteroids Wid
 2. Add the Asteroids Widget to your preferred sidebar or widget area.
 3. Configure your display rules, images, and button styles.
 
-### Shortcode
-Add the trigger anywhere in your post or page content using:
-[asteroids]
+## Game Controls
+* **W / Up Arrow:** Thrust forward
+* **A / S / D / Left & Right Arrows:** Steer and rotate
+* **Spacebar:** Fire bullets
+* **B:** Highlight breakable targets
+* **Esc:** Quit game
+
+---
+
+## Shortcode Attributes
+
+Embed the launcher anywhere using the `[asteroids]` shortcode:
+
+| Attribute | Options | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `image` | `none`, `image-1`, `image-2`, `image-3`, `image-4`, `image-5`, `image-6` | `none` | Select launcher graphic (e.g., rocket or arcade cabinets) |
+| `button` | `push-1`, `text-1`, `none` | `push-1` | Select trigger button style or disable it completely |
+| `bullet_color` | `yellow`, `""` | `""` | Change bullet trace color to yellow |
+
+### Examples
+* **Rocket graphic only (no button):**
+  ```text
+  [asteroids image="image-3" button="none"]
+  [asteroids image="image-4" button="none" bullet_color="yellow"]
+  [asteroids button="text-1" image="none"]
+  ```
 
 ---
 
