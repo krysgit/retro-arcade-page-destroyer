@@ -56,7 +56,7 @@ Examples:
 Yes. All fatal errors from deprecated functions (such as `create_function()`) and legacy PHP constructors have been resolved.
 
 = Where can I report bugs or contribute? =
-Report issues and contribute code on GitHub: https://github.com/krysgit/asteroids-widget
+Report issues and contribute code on GitHub: https://github.com/krysgit/retro-arcade-page-destroyer
 
 == Credits ==
 
