@@ -277,4 +277,4 @@ function retro_arcade_shortcode_handler( $atts ) {
 	return ob_get_clean();
 }
 add_shortcode( 'asteroids', 'retro_arcade_shortcode_handler' );
-add_shortcode( 'asteroids', 'retro_arcade_shortcode_handler' );
+add_shortcode( 'retro_arcade', 'retro_arcade_shortcode_handler' );
