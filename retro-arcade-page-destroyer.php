@@ -1,29 +1,29 @@
 <?php
 /*
-Plugin Name: Asteroids Game Widget Reloaded
+Plugin Name: Retro Arcade Page Destroyer
 Plugin URI: https://github.com/krysgit/asteroids-widget
-Description: Turn your site into the arcade game Asteroids. Destroy webpage contents with your ship. A modernized fork compatible with PHP 8+.
+Description: Turn your site into a retro arcade shooter. Destroy webpage contents with your ship. A modernized fork compatible with PHP 8+.
 Version: 1.0.0
 Author: Krystalia Saldari (Fork of Electric Tree House)
 Author URI: https://github.com/krysgit
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: asteroids-game-widget
+Text Domain: retro-arcade-page-destroyer
 */
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class Asteroids_Widget extends WP_Widget {
+class Retro_Arcade_Page_Destroyer_Widget extends WP_Widget {
 
 	public function __construct() {
 		$widget_ops = array(
-			'classname'   => 'widget_asteroids',
-			'description' => __( 'Play Asteroids and Blow Stuff Up', 'asteroids-game-widget' ),
+			'classname'   => 'widget_retro_arcade',
+			'description' => __( 'Play retro arcade shooter and destroy page elements', 'retro-arcade-page-destroyer' ),
 		);
 		$control_ops = array( 'width' => 500, 'height' => 350 );
-		parent::__construct( 'asteroids', __( 'Asteroids Widget', 'asteroids-game-widget' ), $widget_ops, $control_ops );
+		parent::__construct( 'retro_arcade_destroyer', __( 'Retro Arcade Destroyer', 'retro-arcade-page-destroyer' ), $widget_ops, $control_ops );
 	}
 
 	public function widget( $args, $options ) {
@@ -155,66 +155,66 @@ class Asteroids_Widget extends WP_Widget {
 		$text  = $options['text'];
 		?>
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'asteroids-game-widget' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'retro-arcade-page-destroyer' ); ?></label>
 			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>" />
 		</p>
     
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php esc_html_e( 'Description / Instructions:', 'asteroids-game-widget' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>"><?php esc_html_e( 'Description / Instructions:', 'retro-arcade-page-destroyer' ); ?></label>
 			<textarea class="widefat" rows="4" cols="22" id="<?php echo esc_attr( $this->get_field_id( 'text' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'text' ) ); ?>"><?php echo esc_textarea( $text ); ?></textarea>
 		</p>
 
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'filter' ) ); ?>">
 				<input id="<?php echo esc_attr( $this->get_field_id( 'filter' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'filter' ) ); ?>" type="checkbox" <?php checked( $options['filter'] ); ?> />
-				<?php esc_html_e( 'Auto-Format Text', 'asteroids-game-widget' ); ?>
+				<?php esc_html_e( 'Auto-Format Text', 'retro-arcade-page-destroyer' ); ?>
 			</label><br>
     
 			<label for="<?php echo esc_attr( $this->get_field_id( 'bullet-color' ) ); ?>">
 				<input id="<?php echo esc_attr( $this->get_field_id( 'bullet-color' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'bullet-color' ) ); ?>" type="checkbox" <?php checked( $options['bullet-color'] ); ?> />
-				<?php esc_html_e( 'Change Bullet Color to Yellow', 'asteroids-game-widget' ); ?>
+				<?php esc_html_e( 'Change Bullet Color to Yellow', 'retro-arcade-page-destroyer' ); ?>
 			</label><br>
     
 			<label for="<?php echo esc_attr( $this->get_field_id( 'background' ) ); ?>">
 				<input id="<?php echo esc_attr( $this->get_field_id( 'background' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'background' ) ); ?>" type="checkbox" <?php checked( $options['background'] ); ?> />
-				<?php esc_html_e( 'Add Asteroids Background', 'asteroids-game-widget' ); ?>
+				<?php esc_html_e( 'Add Background', 'retro-arcade-page-destroyer' ); ?>
 			</label>
 		</p>
     
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'image-opt' ) ); ?>"><?php esc_html_e( 'Show Image Option: ', 'asteroids-game-widget' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'image-opt' ) ); ?>"><?php esc_html_e( 'Show Image Option: ', 'retro-arcade-page-destroyer' ); ?></label>
 			<select name="<?php echo esc_attr( $this->get_field_name( 'image-opt' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'image-opt' ) ); ?>" class="widefat">
-				<option value="none" <?php selected( $options['image-opt'], 'none' ); ?>><?php esc_html_e( 'None', 'asteroids-game-widget' ); ?></option>
-				<option value="image-1" <?php selected( $options['image-opt'], 'image-1' ); ?>><?php esc_html_e( 'Asteroids', 'asteroids-game-widget' ); ?></option>
-				<option value="image-2" <?php selected( $options['image-opt'], 'image-2' ); ?>><?php esc_html_e( 'Hover', 'asteroids-game-widget' ); ?></option>
-				<option value="image-3" <?php selected( $options['image-opt'], 'image-3' ); ?>><?php esc_html_e( 'Rocket', 'asteroids-game-widget' ); ?></option>
-				<option value="image-4" <?php selected( $options['image-opt'], 'image-4' ); ?>><?php esc_html_e( 'Red Arcade', 'asteroids-game-widget' ); ?></option>
-				<option value="image-5" <?php selected( $options['image-opt'], 'image-5' ); ?>><?php esc_html_e( 'Yellow Arcade', 'asteroids-game-widget' ); ?></option>
+				<option value="none" <?php selected( $options['image-opt'], 'none' ); ?>><?php esc_html_e( 'None', 'retro-arcade-page-destroyer' ); ?></option>
+				<option value="image-1" <?php selected( $options['image-opt'], 'image-1' ); ?>><?php esc_html_e( 'Arcade Target', 'retro-arcade-page-destroyer' ); ?></option>
+				<option value="image-2" <?php selected( $options['image-opt'], 'image-2' ); ?>><?php esc_html_e( 'Hover', 'retro-arcade-page-destroyer' ); ?></option>
+				<option value="image-3" <?php selected( $options['image-opt'], 'image-3' ); ?>><?php esc_html_e( 'Rocket', 'retro-arcade-page-destroyer' ); ?></option>
+				<option value="image-4" <?php selected( $options['image-opt'], 'image-4' ); ?>><?php esc_html_e( 'Red Arcade', 'retro-arcade-page-destroyer' ); ?></option>
+				<option value="image-5" <?php selected( $options['image-opt'], 'image-5' ); ?>><?php esc_html_e( 'Yellow Arcade', 'retro-arcade-page-destroyer' ); ?></option>
 			</select>
 		</p>
                     
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'button-opt' ) ); ?>"><?php esc_html_e( 'Use Button or Text Link: ', 'asteroids-game-widget' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'button-opt' ) ); ?>"><?php esc_html_e( 'Use Button or Text Link: ', 'retro-arcade-page-destroyer' ); ?></label>
 			<select name="<?php echo esc_attr( $this->get_field_name( 'button-opt' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'button-opt' ) ); ?>" class="widefat">
-				<option value="none" <?php selected( $options['button-opt'], 'none' ); ?>><?php esc_html_e( 'None', 'asteroids-game-widget' ); ?></option>
-				<option value="push-1" <?php selected( $options['button-opt'], 'push-1' ); ?>><?php esc_html_e( 'Push Button 1', 'asteroids-game-widget' ); ?></option>
-				<option value="text-1" <?php selected( $options['button-opt'], 'text-1' ); ?>><?php esc_html_e( 'Text Link 1', 'asteroids-game-widget' ); ?></option>
+				<option value="none" <?php selected( $options['button-opt'], 'none' ); ?>><?php esc_html_e( 'None', 'retro-arcade-page-destroyer' ); ?></option>
+				<option value="push-1" <?php selected( $options['button-opt'], 'push-1' ); ?>><?php esc_html_e( 'Push Button 1', 'retro-arcade-page-destroyer' ); ?></option>
+				<option value="text-1" <?php selected( $options['button-opt'], 'text-1' ); ?>><?php esc_html_e( 'Text Link 1', 'retro-arcade-page-destroyer' ); ?></option>
 			</select>
 		</p>
             
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'show' ) ); ?>"><?php esc_html_e( 'Display only on:', 'asteroids-game-widget' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'show' ) ); ?>"><?php esc_html_e( 'Display only on:', 'retro-arcade-page-destroyer' ); ?></label>
 			<select name="<?php echo esc_attr( $this->get_field_name( 'show' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'show' ) ); ?>" class="widefat">
-				<option value="all" <?php selected( $options['show'], 'all' ); ?>><?php esc_html_e( 'All', 'asteroids-game-widget' ); ?></option>
-				<option value="front" <?php selected( $options['show'], 'front' ); ?>><?php esc_html_e( 'Front Page', 'asteroids-game-widget' ); ?></option>
-				<option value="post" <?php selected( $options['show'], 'post' ); ?>><?php esc_html_e( 'Post(s)', 'asteroids-game-widget' ); ?></option>
-				<option value="category" <?php selected( $options['show'], 'category' ); ?>><?php esc_html_e( 'Category', 'asteroids-game-widget' ); ?></option>
-				<option value="page" <?php selected( $options['show'], 'page' ); ?>><?php esc_html_e( 'Page(s)', 'asteroids-game-widget' ); ?></option>
+				<option value="all" <?php selected( $options['show'], 'all' ); ?>><?php esc_html_e( 'All', 'retro-arcade-page-destroyer' ); ?></option>
+				<option value="front" <?php selected( $options['show'], 'front' ); ?>><?php esc_html_e( 'Front Page', 'retro-arcade-page-destroyer' ); ?></option>
+				<option value="post" <?php selected( $options['show'], 'post' ); ?>><?php esc_html_e( 'Post(s)', 'retro-arcade-page-destroyer' ); ?></option>
+				<option value="category" <?php selected( $options['show'], 'category' ); ?>><?php esc_html_e( 'Category', 'retro-arcade-page-destroyer' ); ?></option>
+				<option value="page" <?php selected( $options['show'], 'page' ); ?>><?php esc_html_e( 'Page(s)', 'retro-arcade-page-destroyer' ); ?></option>
 			</select>
 		</p>
     
 		<p>
-			<label for="<?php echo esc_attr( $this->get_field_id( 'slug' ) ); ?>"><?php esc_html_e( 'Slug, Title, or ID (Comma Separated):', 'asteroids-game-widget' ); ?></label>
+			<label for="<?php echo esc_attr( $this->get_field_id( 'slug' ) ); ?>"><?php esc_html_e( 'Slug, Title, or ID (Comma Separated):', 'retro-arcade-page-destroyer' ); ?></label>
 			<input type="text" class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'slug' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'slug' ) ); ?>" value="<?php echo esc_attr( $options['slug'] ); ?>" />
 		</p>
 		<?php
@@ -222,23 +222,23 @@ class Asteroids_Widget extends WP_Widget {
 }
 
 add_action( 'widgets_init', function() {
-	register_widget( 'Asteroids_Widget' );
+	register_widget( 'Retro_Arcade_Page_Destroyer_Widget' );
 } );
 
 // Enqueue Frontend Script
-function asteroids_enqueue_scripts() {
+function retro_arcade_enqueue_scripts() {
 	wp_enqueue_script(
-		'asteroids-start',
+		'retro-arcade-start',
 		plugins_url( 'gears/start-asteroids-function.js', __FILE__ ),
 		array(),
 		'1.0.0',
 		true
 	);
 }
-add_action( 'wp_enqueue_scripts', 'asteroids_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'retro_arcade_enqueue_scripts' );
 
 // Shortcode Support
-function asteroids_shortcode_handler( $atts ) {
+function retro_arcade_shortcode_handler( $atts ) {
 	$plugin_url          = plugins_url( 'gears/', __FILE__ );
 	$address             = esc_url( $plugin_url . 'play-asteroids.min.js' );
 	$asteroids_start     = "startAsteroids('','" . esc_js( $address ) . "');";
@@ -249,4 +249,4 @@ function asteroids_shortcode_handler( $atts ) {
 	include( plugin_dir_path( __FILE__ ) . 'gears/run-asteroids.php' );
 	return ob_get_clean();
 }
-add_shortcode( 'asteroids', 'asteroids_shortcode_handler' );
+add_shortcode( 'asteroids', 'retro_arcade_shortcode_handler' );
