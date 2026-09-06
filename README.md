@@ -1,14 +1,14 @@
-# Asteroids Game Widget Reloaded
+# Retro Arcade Page Destroyer
 
-Turn your WordPress site into the classic arcade game Asteroids. Click to start and destroy the contents of your webpage by flying around and shooting them. 
+Turn your WordPress site into an interactive retro arcade shooter. Click to launch the ship and destroy webpage contents by flying around and blasting them.
 
-This repository contains a modernized, secure fork of the original "Asteroids Widget" by Eric Burger (Electric Tree House) and Erik Rothoff Andersson, fully updated for modern WordPress standards and PHP 8.0, 8.1, 8.2, and 8.3+.
+This repository contains a modernized, secure fork of the classic "Asteroids Widget" by Eric Burger (Electric Tree House) and Erik Rothoff Andersson, fully updated for modern WordPress standards and **PHP 8.0, 8.1, 8.2, and 8.3+**.
 
 ---
 
 ## Features
-* Classic Asteroids arcade gameplay directly on your WordPress pages.
-* Multiple button and retro arcade machine image triggers.
+* Classic arcade vector gameplay directly on your WordPress pages.
+* Multiple button and retro arcade machine triggers.
 * Optional custom backgrounds and auto-formatting.
 * Embed anywhere using the [asteroids] shortcode or as a Sidebar Widget.
 * Zero fatal errors on PHP 8+.
@@ -37,25 +37,24 @@ This repository contains a modernized, secure fork of the original "Asteroids Wi
 3. Configure your display rules, images, and button styles.
 
 ### Shortcode
-Add the trigger anywhere in your post or page content using the shortcode: [asteroids]
+Add the trigger anywhere in your post or page content using:
+[asteroids]
 
 ---
 
 ## Changelog
 
-### 1.0.0 (Reloaded)
-* Forked from original Asteroids Widget by Eric Burger.
-* Fixed Fatal Error: Uncaught Error: Call to undefined function create_function() for PHP 8+ compatibility.
-* Updated class constructor from legacy PHP 4 syntax to standard __construct().
-* Completely removed insecure eval() execution.
-* Added modern sanitization, output escaping, and direct access guards (ABSPATH).
-* Converted shortcode output to use Output Buffering.
-* Enqueued frontend scripts properly with wp_enqueue_script().
+### 1.0.0
+* Modernized fork compatible with PHP 8+.
+* Fixed fatal errors caused by deprecated functions.
+* Updated class constructors to standard __construct().
+* Added output escaping, sanitization, and security guards.
+* Added shortcode support.
 
 ---
 
 ## Credits & License
 * Original Plugin: Eric Burger (Electric Tree House)
 * Original Game Script: Erik Rothoff Andersson
-* PHP 8+ Fork Maintainer: Chris Saldaris ([https://github.com/krysgit](https://github.com/krysgit))
-* License: Distributed under the GNU General Public License v2.0 or later ([https://www.gnu.org/licenses/gpl-2.0.html](https://www.gnu.org/licenses/gpl-2.0.html)).
+* PHP 8+ Modernization & Fork Maintainer: Krystalia Saldari (https://github.com/krysgit)
+* License: Distributed under the GNU General Public License v2.0 or later (https://www.gnu.org/licenses/gpl-2.0.html).
