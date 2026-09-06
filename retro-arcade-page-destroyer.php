@@ -4,7 +4,7 @@ Plugin Name: Retro Arcade Page Destroyer
 Plugin URI: https://github.com/krysgit/retro-arcade-page-destroyer
 Description: Turn your site into a retro arcade shooter. Destroy webpage contents with your ship. A modernized fork compatible with PHP 8+. Use shortcode [asteroids] or the widget to launch.
 Version: 1.0.0
-Author: Krystalia Saldari (Fork of Electric Tree House)
+Author: Krystalia Saldari
 Author URI: https://github.com/krysgit
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
