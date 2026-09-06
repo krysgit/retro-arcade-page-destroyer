@@ -33,7 +33,7 @@ This repository contains a modernized, secure fork of the classic "Asteroids Wid
 
 ### Widget Setup
 1. Go to Appearance > Widgets.
-2. Add the Asteroids Widget to your preferred sidebar or widget area.
+2. Add the Retro Arcade Destroyer widget to your preferred sidebar or widget area.
 3. Configure your display rules, images, and button styles.
 
 ## Game Controls
