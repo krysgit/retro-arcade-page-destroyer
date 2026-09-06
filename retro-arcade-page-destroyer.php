@@ -2,7 +2,7 @@
 /*
 Plugin Name: Retro Arcade Page Destroyer
 Plugin URI: https://github.com/krysgit/asteroids-widget
-Description: Turn your site into a retro arcade shooter. Destroy webpage contents with your ship. A modernized fork compatible with PHP 8+.
+Description: Turn your site into a retro arcade shooter. Destroy webpage contents with your ship. A modernized fork compatible with PHP 8+. Use shortcode [asteroids] or the widget to launch.
 Version: 1.0.0
 Author: Krystalia Saldari (Fork of Electric Tree House)
 Author URI: https://github.com/krysgit
