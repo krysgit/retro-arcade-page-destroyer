@@ -238,15 +238,43 @@ function retro_arcade_enqueue_scripts() {
 add_action( 'wp_enqueue_scripts', 'retro_arcade_enqueue_scripts' );
 
 // Shortcode Support
+// Shortcode Support with Attributes
 function retro_arcade_shortcode_handler( $atts ) {
-	$plugin_url          = plugins_url( 'gears/', __FILE__ );
-	$address             = esc_url( $plugin_url . 'play-asteroids.min.js' );
-	$asteroids_start     = "startAsteroids('','" . esc_js( $address ) . "');";
-	$asteroids_buttonopt = 'push-1';
-	$asteroids_imageopt  = 'none';
+	$atts = shortcode_atts(
+		array(
+			'image'        => 'none',    // image-1, image-2, image-3, image-4, image-5, image-6 ή none
+			'button'       => 'push-1',  // push-1, text-1 ή none
+			'bullet_color' => '',        // yellow ή κενό
+		),
+		$atts,
+		'asteroids'
+	);
+
+	$plugin_url = plugins_url( 'gears/', __FILE__ );
+
+	$asteroids_bk          = esc_url( $plugin_url . 'asteroids-bk.jpg' );
+	$asteroids_mainimage   = esc_url( $plugin_url . 'asteroids-image.jpg' );
+	$asteroids_rocketimage = esc_url( $plugin_url . 'asteroids-rocket.png' );
+	$asteroids_nohoverimage= esc_url( $plugin_url . 'asteroids.jpg' );
+	$asteroids_hoverimage  = esc_url( $plugin_url . 'asteroids-hover.jpg' );
+	$asteroids_arcadered   = esc_url( $plugin_url . 'arcade-red.png' );
+	$asteroids_arcadeyellow= esc_url( $plugin_url . 'arcade-yellow.png' );
+	$asteroids_arcadeblack = esc_url( $plugin_url . 'arcade-black.gif' );
+
+	if ( 'yellow' === sanitize_key( $atts['bullet_color'] ) ) {
+		$address         = esc_url( $plugin_url . 'play-asteroids-yellow.min.js' );
+		$asteroids_start = "startAsteroids('yellow','" . esc_js( $address ) . "');";
+	} else {
+		$address         = esc_url( $plugin_url . 'play-asteroids.min.js' );
+		$asteroids_start = "startAsteroids('','" . esc_js( $address ) . "');";
+	}
+
+	$asteroids_buttonopt = sanitize_key( $atts['button'] );
+	$asteroids_imageopt  = sanitize_key( $atts['image'] );
 
 	ob_start();
-	include( plugin_dir_path( __FILE__ ) . 'gears/run-asteroids.php' );
+	include plugin_dir_path( __FILE__ ) . 'gears/run-asteroids.php';
 	return ob_get_clean();
 }
+add_shortcode( 'asteroids', 'retro_arcade_shortcode_handler' );
 add_shortcode( 'asteroids', 'retro_arcade_shortcode_handler' );
