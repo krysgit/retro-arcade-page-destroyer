@@ -29,7 +29,7 @@ class Retro_Arcade_Page_Destroyer_Widget extends WP_Widget {
 	public function widget( $args, $options ) {
 		$options = wp_parse_args( (array) $options, array(
 			'title'        => '',
-			'text'         => '',
+			'text'         => 'Controls: Use Arrow Keys or WASD to navigate, Spacebar to shoot, and Esc to quit.',
 			'bullet-color' => false,
 			'show'         => 'all',
 			'slug'         => '',
